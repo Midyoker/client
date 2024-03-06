@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import './Header.css';
+import './Content.css';
 
 const ImageUploader = () => {
   const [image, setImage] = useState(null);

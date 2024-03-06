@@ -1,16 +1,16 @@
 import React from 'react';
-import Header from './components/Header';
 import Navbar from './components/Navbar';
+import Content from './components/Content';
+import Hero from './components/Hero';
 import './App.css';
-
 
 function App() {
   return (
-    <div className='body'>
+    <div className='svg-background'>
       <Navbar />
-      <Header />
-  
-   
+      <Hero />
+      <Content />
+      {/* Add other components here */}
     </div>
   );
 }
