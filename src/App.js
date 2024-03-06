@@ -1,12 +1,15 @@
 import React from 'react';
 import Header from './components/Header';
-import MemberList from './components/MemberList';
+import Navbar from './components/Navbar';
+import './App.css';
+
 
 function App() {
   return (
-    <div>
+    <div className='body'>
+      <Navbar />
       <Header />
-      <MemberList />
+  
    
     </div>
   );
