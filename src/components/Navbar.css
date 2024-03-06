@@ -1,24 +1,73 @@
+* {
+  background-color: black;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
 .n.navbar {
-    /* Navbar background color */
-    padding: 20px 0; /* Adjust as needed */
-    background-image: url('https://images.unsplash.com/photo-1683558351091-9fa9f22cc0d0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-    background-size: cover;
-    background-position: center;
-    height: 100vh; /* Set the navbar height to cover the entire viewport */
-    display: flex;
-    align-items: flex-start; /* Align items to the top of the navbar */
-    justify-content: center;
-  }
-  
-  .navbar-heading {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 45px; /* Adjust font size as needed */
-    color: transparent; /* Make text transparent */
-    background-image: url('https://media.istockphoto.com/id/625599832/photo/tropical-jungle.jpg?s=2048x2048&w=is&k=20&c=t5YUYf3spaNoJODu1pZpyHTtWOAyJJHMctcLUN75RKA=');
-    background-size: cover;
-    -webkit-background-clip: text; /* Clip text to background image */
-    background-clip: text;
-    text-shadow: 0 0 110px black; /* Add black outer shadow to the text */
-  }
+  /* Navbar background color */
+  padding: 20px 0; /* Adjust as needed */
+  background-image: url('https://images.unsplash.com/photo-1683558351091-9fa9f22cc0d0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-size: cover;
+  background-position: center;
+  height: 100vh; /* Set the navbar height to cover the entire viewport */
+  display: flex;
+  align-items: flex-start; /* Align items to the top of the navbar */
+  justify-content: center;
+}
+
+.navbar-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 45px; /* Adjust font size as needed */
+  color: transparent; /* Make text transparent */
+  background-image: url('https://media.istockphoto.com/id/625599832/photo/tropical-jungle.jpg?s=2048x2048&w=is&k=20&c=t5YUYf3spaNoJODu1pZpyHTtWOAyJJHMctcLUN75RKA=');
+  background-size: cover;
+  -webkit-background-clip: text; /* Clip text to background image */
+  background-clip: text;
+  text-shadow: 0 0 110px black; /* Add black outer shadow to the text */
+}
+nav {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background: transparent;
+  backdrop-filter: blur(10px);
+  padding: 10px;
+}
+nav ul li {
+  list-style: none;
+  display: inline-block;
+  padding: 15px 35px;
+  margin: 10px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #777;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  transition: color 0.5s;
+}
+nav ul li::after {
+  content: "";
+  background: linear-gradient(to right, #EC36A3, #9B3BD3);
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  opacity: 0;
+  transition: top 0.5s, opacity 0.5s;
+}
+nav ul li:hover {
+  color: #fff;
+}
+nav ul li:hover::after {
+  top: 50%;
+  opacity: 1;
+}
