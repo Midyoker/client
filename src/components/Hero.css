@@ -1,19 +1,50 @@
 .hero-container {
-    padding: 20px 0; /* Adjust as needed */
-    background: transparent; /* Set the background to transparent */
-    height: calc(100vh - 80px); /* Subtract navbar height (adjust as needed) */
-    display: flex;
-    align-items: center; /* Align items vertically in the center */
-    justify-content: center; /* Align items horizontally in the center */
-  }
+  padding: 20px 0; /* Adjust as needed */
+  background: transparent; /* Set the background to transparent */
+  height: calc(100vh - 80px); /* Subtract navbar height (adjust as needed) */
+  display: flex;
+  align-items: center; /* Center content vertically */
+}
+
+.hero-heading {
+  flex: 1; /* Take up half of the width */
+  font-size: 68px; /* Adjust font size as needed */
+  font-family: 'Montserrat', sans-serif; /* Use Montserrat font */
+  color: transparent; /* Make text transparent */
+  background-image: url('https://media.istockphoto.com/id/625599832/photo/tropical-jungle.jpg?s=2048x2048&w=is&k=20&c=t5YUYf3spaNoJODu1pZpyHTtWOAyJJHMctcLUN75RKA=');
+  background-size: cover;
+  -webkit-background-clip: text; /* Clip text to background image */
+  background-clip: text;
+  text-shadow: 0 0 110px black; /* Add black outer shadow to the text */
+  border-style: solid;
+}
+
+.hero-box {
+  flex: 1; /* Take up half of the width */
+  padding: 20px;
+  border-radius: 20px; /* Add curved edges */
+  background-color: transparent;
+  backdrop-filter: blur(6px);
+   /* Background color of the box */
+  margin-left: 20px; /* Add spacing between heading and box */
+}
+
+.hero-image-container {
+  border-radius: 20px; /* Add curved edges to the image container */
+  overflow: hidden; /* Ensure image stays within container */
+}
+
+.hero-image {
+  width: 100%; /* Ensure image fills the container */
+}
+
+.hero-text {
+  font-size: 20px; /* Adjust font size as needed */
+  color: #333;
+  font-weight: 400;
+  font-family: 'Montserrat', sans-serif; /* Text color */
+}
+
+
+
   
-  .hero-heading {
-    font-size: 115px; /* Adjust font size as needed */
-    font-family: 'Montserrat', sans-serif; /* Use Montserrat font */
-    color: transparent; /* Make text transparent */
-    background-image: url('https://media.istockphoto.com/id/625599832/photo/tropical-jungle.jpg?s=2048x2048&w=is&k=20&c=t5YUYf3spaNoJODu1pZpyHTtWOAyJJHMctcLUN75RKA=');
-    background-size: cover;
-    -webkit-background-clip: text; /* Clip text to background image */
-    background-clip: text;
-    text-shadow: 0 0 110px black; /* Add black outer shadow to the text */
-  }
