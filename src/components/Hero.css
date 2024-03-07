@@ -1,5 +1,6 @@
 .hero-container {
-  padding: 20px 0; /* Adjust as needed */
+  padding: 20px 0;
+  margin-top:40px ; /* Adjust as needed */
   background: transparent; /* Set the background to transparent */
   height: calc(100vh - 80px); /* Subtract navbar height (adjust as needed) */
   display: flex;
@@ -24,7 +25,7 @@
   padding: 20px;
   border-radius: 20px; /* Add curved edges */
   background-color: transparent;
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(5px);
    /* Background color of the box */
   margin-left: 20px; /* Add spacing between heading and box */
 }

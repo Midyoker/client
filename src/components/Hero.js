@@ -7,9 +7,9 @@ function Hero() {
       <h1 className="hero-heading">TERRAIN RECOGNITION SYSTEM USING DEEP LEARNING</h1>
       <div className='hero-box'>
         <div className='hero-image-container'>
-          <img src="./mountain.png" alt="Terrain" className="hero-image" width={20} height={350} />
+          <img src="./mountain.png" alt="Terrain" className="hero-image" width={20} height={450} />
         </div>
-        <p className="hero-text">This is a project that uses deep learning to recognize terrain from images. The project is built using a full stack web application. The front end is built using React and the back end is built using Flask. The deep learning model is built using TensorFlow and Keras. The model is trained on a dataset of images of different terrains. The model is then used to predict the terrain in an image uploaded by the user. The user can also view the statistics of the model and the dataset. The user can also view the members of the team that built the project.</p>
+        <p className="hero-text">The Terrain Recognition Using Machine Learning project introduces an automated solution for identifying terrains, benefiting autonomous navigation and disaster response. Through rigorous data analysis and model training, it enhances decision-making in dynamic environments. Positioned at the forefront of machine learning and environmental analysis, it sets new industry benchmarks.</p>
       </div>
     </div>
   );
