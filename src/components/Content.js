@@ -47,6 +47,7 @@ const ImageUploader = () => {
 
   return (
     <div className="header-container">
+      <div className='content-box'>
       <div className="image-section">
         <div className="uploaded-image-container">
           {image ? (
@@ -75,6 +76,7 @@ const ImageUploader = () => {
         <button className="upload-button" onClick={handleImageUpload}>
           Upload
         </button>
+      </div>
       </div>
     </div>
   );

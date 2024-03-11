@@ -1,5 +1,5 @@
 .container {
-  position: relative;
+  position: fixed;
 }
 
 nav {
@@ -12,7 +12,7 @@ nav {
   align-items: center; /* Align items vertically in the center */
   justify-content: center; /* Align items horizontally in the center */
   background: transparent;
-  backdrop-filter: blur(2px); /* Add blur effect */
+  backdrop-filter: blur(1px); /* Add blur effect */
   z-index: 2; /* Ensure the navbar stays above other content */
 }
 
