@@ -31,7 +31,8 @@
 }
 
 .hero-image-container {
-  border-radius: 20px; /* Add curved edges to the image container */
+  margin-top: auto;
+  border-radius: 90px; /* Add curved edges to the image container */
   overflow: hidden; /* Ensure image stays within container */
 }
 
