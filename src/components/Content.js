@@ -5,6 +5,7 @@ import './Content.css';
 const ImageUploader = () => {
   const [image, setImage] = useState(null);
   const [fileName, setFileName] = useState('');
+  const [prediction, setPrediction] = useState('');
 
   const handleFileInputChange = (event) => {
     const file = event.target.files[0];
@@ -31,16 +32,17 @@ const ImageUploader = () => {
       const formData = new FormData();
       formData.append('image', image);
 
-      const response = await axios.post('/api/upload', formData, {
+      const response = await axios.post('http://127.0.0.1:5000/predict', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
       });
 
       console.log('Image uploaded successfully:', response.data);
-      // Handle any further logic after successful upload
+      setPrediction(response.data.prediction); // Update prediction state
     } catch (error) {
       console.error('Error uploading image:', error);
+      console.log('AxiosError:', error);
       // Handle error cases
     }
   };
@@ -48,38 +50,40 @@ const ImageUploader = () => {
   return (
     <div className="header-container">
       <div className='content-box'>
-      <div className="image-section">
-        <div className="uploaded-image-container">
-          {image ? (
-            <img
-              className="uploaded-image"
-              src={URL.createObjectURL(image)}
-              alt="Uploaded"
-              onLoad={() => URL.revokeObjectURL(image)}
-            />
-          ) : (
-            <div className="placeholder-text">Your Image Preview</div>
-          )}
+        <div className="image-section">
+          <div className="uploaded-image-container">
+            {image ? (
+              <img
+                className="uploaded-image"
+                src={URL.createObjectURL(image)}
+                alt="Uploaded"
+                onLoad={() => URL.revokeObjectURL(image)}
+              />
+            ) : (
+              <div className="placeholder-text">Your Image Preview</div>
+            )}
+          </div>
         </div>
-      </div>
-      <div className="upload-section">
-        <input
-          id="file-input"
-          type="file"
-          className="upload-input"
-          onChange={handleImageChange}
-        />
-        <button className="upload-button" onClick={handleUploadButtonClick}>
-          Choose Image
-        </button>
-        {fileName && <div className="file-name">{fileName}</div>}
-        <button className="upload-button" onClick={handleImageUpload}>
-          Upload
-        </button>
-      </div>
+        <div className="upload-section">
+          <input
+            id="file-input"
+            type="file"
+            className="upload-input"
+            onChange={handleImageChange}
+          />
+          <button className="upload-button" onClick={handleUploadButtonClick}>
+            Choose Image
+          </button>
+          {fileName && <div className="file-name">{fileName}</div>}
+          <button className="upload-button" onClick={handleImageUpload}>
+            Upload
+          </button>
+          {prediction && <div className="prediction">{prediction}</div>}
+        </div>
       </div>
     </div>
   );
 };
 
 export default ImageUploader;
+
