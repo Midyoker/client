@@ -6,8 +6,10 @@
   box-sizing: border-box;
 }
 .container {
+
     backdrop-filter: blur(1px);
     padding: 10px;
+    border-radius: 300px;
     width: 100%;
     overflow: hidden;
     background-color: rgba(0, 0, 0, 0.2);

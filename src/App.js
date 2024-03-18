@@ -6,16 +6,15 @@ import ParallaxScroll from './Components/ParallaxScroll';
 
 const App = () => {
   return (
-    <div> 
-      <Router>
+    <Router>
+      <div> 
         <Navbar />
         <Routes>
-          <Route exact path="/" element={<></>} />
-          <Route path="/content" element={<ImageUploader />} /> 
+          <Route path="/" element={<ParallaxScroll />} />
+          <Route path="/Content" element={<ImageUploader />} />
         </Routes>
-      </Router>
-      <ParallaxScroll />
-    </div>
+      </div>
+    </Router>
   );
 };
 
