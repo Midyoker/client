@@ -1,22 +1,22 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; // Import Routes
-import Navbar from './components/Navbar';
-import Content from './components/Content';
-import Hero from './components/Hero';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './Components/Navbar';
+import ImageUploader from './Components/Content';
+import ParallaxScroll from './Components/ParallaxScroll';
 
-function App() {
+const App = () => {
   return (
-    <div className='svg-background'>
+    <div> 
       <Router>
         <Navbar />
         <Routes>
-          <Route exact path="/" element={<Hero />} />
-          <Route path="/content" element={<Content />} /> 
+          <Route exact path="/" element={<></>} />
+          <Route path="/content" element={<ImageUploader />} /> 
         </Routes>
       </Router>
+      <ParallaxScroll />
     </div>
   );
-}
+};
 
 export default App;
