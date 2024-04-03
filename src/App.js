@@ -9,6 +9,8 @@ const App = () => {
     <Router>
       <div> 
         <Navbar />
+        <div className='new'><p>
+          hello</p></div>
         <Routes>
           <Route path="/" element={<ParallaxScroll />} />
           <Route path="/Content" element={<ImageUploader />} />
