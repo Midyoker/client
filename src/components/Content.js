@@ -86,13 +86,23 @@ const Content = () => {
         </div>
       </div>
       {/* New div to render the prediction result */}
-      <div className="prediction-result">
-        {prediction && <p>Result: {prediction}</p>}
-        {graphUrl && (
-          <div className="graph-container">
-            <img className="graph-image" src={graphUrl} alt="Graph" />
-          </div>
-        )}
+      <div className="box-container">
+        <div className="box">
+          {prediction ? (
+            <p className="prediction-result">Result: {prediction}</p>
+          ) : (
+            <div className="placeholder-box"></div>
+          )}
+        </div>
+        <div className="box">
+          {graphUrl ? (
+            <div className="graph-container">
+              <img className="graph-image" src={graphUrl} alt="Graph" />
+            </div>
+          ) : (
+            <div className="placeholder-box"></div>
+          )}
+        </div>
       </div>
     </div>
   );
