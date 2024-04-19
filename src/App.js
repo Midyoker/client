@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import ImageUploader from './components/Content';
-import ParallaxScroll from './components/ParallaxScroll';
+import Navbar from './Components/Navbar';
+import ImageUploader from './Components/Content';
+import ParallaxScroll from './Components/ParallaxScroll';
 
 const App = () => {
   return (

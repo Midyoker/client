@@ -1,36 +1,43 @@
+/* Ensure the content container covers the entire viewport */
 .content-container {
-  z-index: -10;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  height: 100%;
   width: 100%;
-  background-image: url("https://ik.imagekit.io/whn0gomux/images.jpg?updatedAt=1713423648895");
-  filter: blur(8px);
-  -webkit-filter: blur(8px);
+  height: 100%;
+  overflow: auto; /* Enable scrolling if content overflows */
+  z-index: -1; /* Move behind other elements */
+  background-image: url("https://ik.imagekit.io/whn0gomux/mountains-4832106_1280.jpg?updatedAt=1713509485957");
+  /* filter: blur(8px);
+  -webkit-filter: blur(8px); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
-.content-box {
+.header-container {
   z-index: 9999;
-  max-width: 700px;                                  
-  width: 100%;
-  padding: 10px;
+}
+
+/* Style for the content box */
+.content-box {
+  position: absolute;
+  z-index: 1;
+  width: 60%;
+  max-width: 700px;
+  padding: 20px;
   border-radius: 20px;
-  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(5px);
-  border:  0.3px  #05560e;
-  border-style: inset;
-  margin-top: 120px;
+  border: 1px solid #000;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   flex-direction: row;
 }
 
+/* Styles for image section */
 .image-section {
   display: flex;
   justify-content: center;
@@ -55,9 +62,10 @@
   border-radius: 10px;
 }
 
+/* Styles for upload section */
 .upload-section {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: space-between;
   margin-top: 20px;
 }
@@ -67,8 +75,6 @@
 }
 
 .upload-button {
-  display: flex;
-  flex-wrap: nowrap;
   padding: 10px 20px;
   background: linear-gradient(to right, #ec36a3, #9b3bd3);
   color: white;
@@ -100,6 +106,7 @@
   font-size: 14px;
 }
 
+/* Styles for prediction section */
 .prediction {
   margin-top: 20px;
   padding: 10px;
@@ -109,11 +116,15 @@
   width: 100%;
 }
 
+/* Styles for box container */
 .box-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
+  /* margin-top: 20px; */
+  margin: 26rem;
+  /* padding-top: 100rem; */
+  padding: 7rem;
 }
 
 .box {
@@ -121,9 +132,10 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center
+  align-items: center;
 }
 
+/* Styles for graph container */
 .graph-container {
   margin-top: 20px;
   text-align: center;
