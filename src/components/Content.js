@@ -11,7 +11,7 @@ const Content = () => {
   const handleFileInputChange = (event) => {
     const file = event.target.files[0];
     setImage(file);
-    setFileName(file ? file.name : ''); // Handle the case when file is not selected
+    setFileName(file ? file.name : '');
   };
 
   const handleUploadButtonClick = () => {
@@ -40,34 +40,32 @@ const Content = () => {
       });
 
       console.log('Image uploaded successfully:', response.data);
-      setPrediction(response.data.prediction); // Update prediction state
-      setGraphUrl(response.data.graph); // Update graph URL
+      setPrediction(response.data.prediction);
+      setGraphUrl(response.data.graph);
     } catch (error) {
       console.error('Error uploading image:', error);
-      console.log('AxiosError:', error);
-      // Handle error cases
     }
   };
 
   return (
     <div className="content-container">
-      <div className="header-container">
-        <div className='content-box'>
-          <div className="image-section">
-            <div className="uploaded-image-container">
-              {image ? (
-                <img
-                  className="uploaded-image"
-                  src={URL.createObjectURL(image)}
-                  alt="Uploaded"
-                  onLoad={() => URL.revokeObjectURL(image)}
-                />
-              ) : (
-                <div className="placeholder-text">Your Image Preview</div>
-              )}
-            </div>
+      <div className="content-box">
+        <div className="image-section">
+          <div className="uploaded-image-container">
+            {image ? (
+              <img
+                className="uploaded-image"
+                src={URL.createObjectURL(image)}
+                alt="Uploaded"
+                onLoad={() => URL.revokeObjectURL(image)}
+              />
+            ) : (
+              <div className="placeholder-text">Your Image Preview</div>
+            )}
           </div>
-          <div className="upload-section">
+        </div>
+        <div className="upload-section">
+          <div className="upload-buttons">
             <input
               id="file-input"
               type="file"
@@ -81,19 +79,11 @@ const Content = () => {
             <button className="upload-button" onClick={handleImageUpload}>
               Upload
             </button>
-            {prediction && <div className="prediction">{prediction}</div>}
           </div>
         </div>
+        {prediction && <div className="prediction">{prediction}</div>}
       </div>
-      {/* New div to render the prediction result */}
       <div className="box-container">
-        <div className="box">
-          {prediction ? (
-            <p className="prediction-result">Result: {prediction}</p>
-          ) : (
-            <div className="placeholder-box"></div>
-          )}
-        </div>
         <div className="box">
           {graphUrl ? (
             <div className="graph-container">
@@ -109,3 +99,4 @@ const Content = () => {
 };
 
 export default Content;
+
