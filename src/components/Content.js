@@ -29,6 +29,7 @@ const Content = () => {
         console.error('No image selected for upload');
         return;
       }
+       
 
       const formData = new FormData();
       formData.append('image', image);
@@ -48,6 +49,13 @@ const Content = () => {
       // Handle error cases
     }
   };
+  const handleClear = () =>{
+    setImage(null);
+    setFileName('');
+    setPrediction('');
+    setGraphUrl('');
+  }
+  
 
   return (
         <div className="content-container">
@@ -80,6 +88,9 @@ const Content = () => {
                 {fileName && <div className="file-name">{fileName}</div>}
                 <button className="upload-button" onClick={handleImageUpload}>
                   Upload
+                </button>
+                <button className="upload-button" onClick={handleClear}>
+                  Clear
                 </button>
                 {prediction && <div className="prediction">{prediction}</div>}
               </div>

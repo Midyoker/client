@@ -1,15 +1,12 @@
-/* Ensure the content container covers the entire viewport */
 .content-container {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  overflow: auto; /* Enable scrolling if content overflows */
-  z-index: -1; /* Move behind other elements */
+  overflow: auto;
+  z-index: 0; /* Move behind other elements */
   background-image: url("https://ik.imagekit.io/whn0gomux/mountains-4832106_1280.jpg?updatedAt=1713509485957");
-  /* filter: blur(8px);
-  -webkit-filter: blur(8px); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -22,7 +19,7 @@
 /* Style for the content box */
 .content-box {
   position: absolute;
-  z-index: 1;
+  z-index: 1; /* Ensure content box is on top */
   width: 60%;
   max-width: 700px;
   padding: 20px;
@@ -35,6 +32,7 @@
   transform: translate(-50%, -50%);
   display: flex;
   flex-direction: row;
+  margin-bottom: 20px;
 }
 
 /* Styles for image section */
@@ -118,30 +116,42 @@
 
 /* Styles for box container */
 .box-container {
+  position: absolute; 
+  margin-top: 40px;/* Position relative to the content */
+  z-index: 1; /* Ensure box container is on top of content */
+  top: calc(50% + 10rem); /* Adjust top position as needed */
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
-  justify-content: center;
+  justify-content: center; /* Adjust alignment as needed */
   align-items: center;
-  /* margin-top: 20px; */
-  margin: 26rem;
-  /* padding-top: 100rem; */
-  padding: 7rem;
+  width: 60%;
+  height: 5%; /* Adjust width as needed */
+  padding: 1.5rem 1rem; /* Adjust padding as needed */
+  border-radius: 20px; /* Curved edges */
+  background-color: rgba(255, 255, 255, 0.8); /* White translucent background */
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1); /* Shadow for depth */
 }
 
+
 .box {
-  margin: 0 10px;
+  /* margin: 0 20px; */
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
 /* Styles for graph container */
 .graph-container {
-  margin-top: 20px;
+  margin-top: 400px;
   text-align: center;
 }
 
 .graph-image {
   max-width: 100%;
   border-radius: 10px;
+  margin-right: 400px;
 }
+/* .upload-button-1{
+  z-index: 99;
+} */
